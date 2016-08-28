@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BPMN/XPDL Editor | Demo</title>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
+    <script type="text/javascript" src="svg.js"></script>
+    <script type="text/javascript" src="svg.draggable.js"></script>
+    <script type="text/javascript" src="svg.filter.js"></script>
+    <script type="text/javascript" src="codemirror/codemirror.js"></script>
+    <script type="text/javascript" src="codemirror/xml.js"></script>
+    <script type="text/javascript" src="codemirror/xml-fold.js"></script>
+    <script type="text/javascript" src="codemirror/matchtags.js"></script>
+    <script type="text/javascript" src="vkbeautify.js"></script>
+    <script type="text/javascript" src="bpmn-editor.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="bpmn-editor.css" />
+    <link type="text/css" rel="stylesheet" href="codemirror/codemirror.css" />
+    <link type="text/css" rel="stylesheet" href="codemirror/ambiance.css" />
+   
+</head>
+<body spellcheck="false">
+<div class="info-box">Copyright Ali Reza Barkhordari</div>
+<div class="xpdleditor-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="widgetbox-wrapper">
+                                <div class="widgetbox-header">Swimlanes</div>
+                                <div class="widgetbox-content">
+                                    <table class="widgetbox-table">
+                                        <tr>
+                                            <td class="hover" title="Single Lane Pool">
+                                                <img class="widgetbox-swimlane" data-swimlane="1" src="bpmn pic/swim_1.png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Double Lane Pool">
+                                                <img class="widgetbox-swimlane" data-swimlane="2" src="bpmn pic/swim_2.png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Triple Lane Pool">
+                                                <img class="widgetbox-swimlane" data-swimlane="3" src="bpmn pic/swim_3.png" alt="" />
+                                            </td> 
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Four Lane Pool">
+                                                <img class="widgetbox-swimlane" data-swimlane="4" src="bpmn pic/swim_4.png" alt="" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="widgetbox-header">Activities</div>
+                                <div class="widgetbox-content">
+                                    <table class="widgetbox-table">
+                                        <tr>
+                                            <td class="hover" title="Process" >
+                                                <img class="widgetbox-activity bpmn-widget" data-widget-id="1" data-widget-type="activity" src="bpmn pic/activity.png" alt="" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="widgetbox-header">Events</div>
+                                <div class="widgetbox-content">
+                                    <table class="widgetbox-table">
+                                        <tr>
+                                            <td class="hover" title="General Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="1" data-widget-name="StartIntermidiate" data-widget-type="event" src="bpmn pic/event (1).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="General Start" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="2" data-widget-name="Start" data-widget-type="event" src="bpmn pic/event (2).png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="General End" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="3" data-widget-name="End" data-widget-type="event" src="bpmn pic/event (3).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Timer Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="4" data-widget-name="TimerIntermidiate" data-widget-type="event" src="bpmn pic/event (4).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Timer Start" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="5" data-widget-name="TimerStart" data-widget-type="event" src="bpmn pic/event (5).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Terminate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="6" data-widget-name="Terminate" data-widget-type="event" src="bpmn pic/event (6).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Rule Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="7" data-widget-name="RuleIntermidiat" data-widget-type="event" src="bpmn pic/event (7).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Rule Start" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="8" data-widget-name="RuleStart" data-widget-type="event" src="bpmn pic/event (8).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Muliple Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="9" data-widget-name="MulipleIntermidiate" data-widget-type="event" src="bpmn pic/event (9).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Multiple Start" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="10" data-widget-name="MultipleStart" data-widget-type="event" src="bpmn pic/event (10).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Message End" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="11" data-widget-name="MessageEnd" data-widget-type="event" src="bpmn pic/event (11).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Message Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="12" data-widget-name="MessageIntermidiate" data-widget-type="event" src="bpmn pic/event (12).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Message Start" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="13" data-widget-name="MessageStart" data-widget-type="event" src="bpmn pic/event (13).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Link End" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="14" data-widget-name="LinkEnd" data-widget-type="event" src="bpmn pic/event (14).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Link Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="15" data-widget-name="LinkIntermidiate" data-widget-type="event" src="bpmn pic/event (15).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Link Start" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="16" data-widget-name="LinkStart" data-widget-type="event" src="bpmn pic/event (16).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Error End" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="17" data-widget-name="ErrorEnd" data-widget-type="event" src="bpmn pic/event (17).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Error Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="18" data-widget-name="ErrorIntermidiate" data-widget-type="event" src="bpmn pic/event (18).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Compensation End" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="19" data-widget-name="CompensationEnd" data-widget-type="event" src="bpmn pic/event (19).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Compensation Intermidiate" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="20" data-widget-name="CompensationIntermidiate" data-widget-type="event" src="bpmn pic/event (20).png" alt="" />
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td class="hover" title="Cancel End" >
+                                                <img class="widgetbox-event bpmn-widget" data-widget-id="21" data-widget-name="CancelEnd" data-widget-type="event" src="bpmn pic/event (21).png" alt="" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                    
+                                <div class="widgetbox-header">Gateways</div>
+                                <div class="widgetbox-content">
+                                    <table class="widgetbox-table">
+                                        <tr>
+                                            <td class="hover" title="Gateway And" >
+                                                <img class="widgetbox-gateway bpmn-widget" data-widget-id="1" data-widget-name="AND" data-widget-type="gateway" src="bpmn pic/gateway (1).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Gateway Xor(event)" >
+                                                <img class="widgetbox-gateway bpmn-widget" data-widget-id="2" data-widget-name="XOR_Event" data-widget-type="gateway" src="bpmn pic/gateway (2).png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Gateway Xor(data)">
+                                                <img class="widgetbox-gateway bpmn-widget" data-widget-id="3" data-widget-name="XOR_Data" data-widget-type="gateway" src="bpmn pic/gateway (3).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Gateway Or">
+                                                <img class="widgetbox-gateway bpmn-widget" data-widget-id="4" data-widget-name="OR" data-widget-type="gateway" src="bpmn pic/gateway (4).png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Gateway Complex">
+                                                <img class="widgetbox-gateway bpmn-widget" data-widget-id="5" data-widget-name="Complex" data-widget-type="gateway" src="bpmn pic/gateway (5).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Gateway">
+                                                <img class="widgetbox-gateway bpmn-widget" data-widget-id="6" data-widget-name="Decision" data-widget-type="gateway" src="bpmn pic/gateway (6).png" alt="" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="widgetbox-header">Connectors</div>
+                                <div class="widgetbox-content">
+                                    <table class="widgetbox-table">
+                                        <tr>
+                                            <td class="hover" title="Default Sequence Flow" >
+                                                <img class="widgetbox-link bpmn-widget" data-widget-id="1" data-widget-name="Default Sequence" data-widget-type="link" src="bpmn pic/arrow (1).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Conditional Sequence Flow" >
+                                                <img class="widgetbox-link bpmn-widget" data-widget-id="2" data-widget-name="Conditional Sequence" data-widget-type="link" src="bpmn pic/arrow (2).png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Message Flow">
+                                                <img class="widgetbox-link bpmn-widget" data-widget-id="3" data-widget-name="Message" data-widget-type="link" src="bpmn pic/arrow (3).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Normal Sequence Flow">
+                                                <img class="widgetbox-link bpmn-widget" data-widget-id="4" data-widget-name="Normal Sequence" data-widget-type="link" src="bpmn pic/arrow (4).png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Association W Arrow">
+                                                <img class="widgetbox-link bpmn-widget" data-widget-id="5" data-widget-name="AssociationW" data-widget-type="link" src="bpmn pic/arrow (5).png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Association">
+                                                <img class="widgetbox-link bpmn-widget" data-widget-id="6" data-widget-name="Association" data-widget-type="link" src="bpmn pic/arrow (6).png" alt="" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="widgetbox-header">Data and Artifacts</div>
+                                <div class="widgetbox-content">
+                                    <table class="widgetbox-table">
+                                        <tr>
+                                            <td class="hover" title="Annotation" >
+                                                <img class="widgetbox-data bpmn-widget" data-widget-id="1" data-widget-type="data" src="bpmn pic/annotation.png" alt="" />
+                                            </td>
+                                            <td class="hover" title="Group" >
+                                                <img class="widgetbox-data bpmn-widget" data-widget-id="2" data-widget-type="data" src="bpmn pic/group.png" alt="" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hover" title="Data Object">
+                                                <img class="widgetbox-data bpmn-widget" data-widget-id="3" data-widget-type="data" src="bpmn pic/data object.png" alt="" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="toolbox">
+                                <span class="bpmneditor-logo">BPMN Editor</span>
+                                <button class="toolbox-button" title="Edit XPDL">XPDL</button>
+                            </div>
+                            <div class="xpdleditor-frame">
+                                <div class="frame-wrapper" id="canvas">
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+.textarea-code-editor {
+    height:500px;
+}
+
+.contextmenu {
+    position:absolute;
+    padding:3px;
+    border:solid 1px silver;
+    background-color:#dfdfdf;
+    cursor:default;
+    font-family:Calibri;
+    font-size:small;
+}
+
+.contextmenu-item {
+    padding:3px 5px;
+}
+
+.contextmenu-item:not(:first-child) {
+    border-top:solid 1px silver;
+}
+
+.contextmenu-item:hover {
+    background-color:#cacaca;   
+}
+        
+body {
+    background:url(bg.gif) 0% 0% repeat;
+    overflow:hidden;
+    padding:0;
+    margin:0;
+}
+
+.info-box {
+    position:absolute;
+    font-family:'Comic Sans MS';
+    font-size:small;
+    padding:5px;
+    bottom:0;
+    left:0;
+    z-index:1000;
+}
+
+div.xpdleditor-frame {
+    margin-top:5px;
+    width:900px;
+    height:560px;
+    border:medium 3px;
+    background:radial-gradient(circle,white,silver);
+    overflow:auto;
+    border:ridge silver;
+    border-radius:5px;
+}
+
+
+iframe {
+    border-style:none;
+    width:100%;
+    height:100%;
+}
+
+.frame-wrapper {
+    width:2000px;
+    margin:30px;
+    height:2000px;
+    box-shadow:0 0 10px black;
+    border-radius:5px;
+    overflow:hidden;
+    position:relative;
+}
+
+.popup-window {
+    position:absolute;
+    border-radius: 5px;
+    box-shadow:0 0 5px black;
+    background:white;
+    padding:5px;
+}
+
+.textbox-label {
+    font-family:Calibri;
+    font-size:small;
+    resize:both
+}
+
+.popup-window-footer {
+    text-align:right;
+    background-color:#dfdfdf;
+}
+
+.popup-window-button {
+    font-size:x-small;
+}
+
+.widget-mask {
+    position:absolute;
+}
+
+.widget-highlight {
+    background-color:yellow;
+    opacity:0.5;
+}
+
+.ab-tooltip {
+    background: black;
+    text-align:center;
+    border-radius: 5px;
+    color: silver;
+    position: absolute;
+    font-family:Verdana;
+    font-size:small;
+    padding: 2px 5px;
+}
+
+.ab-tooltip-arrow {
+    width:10px;
+    height:10px;
+    background:black;
+    transform:rotate(45deg);
+    float:left;
+    position:relative;
+    left:-8px;
+    top:3px;
+}
+
+div.xpdleditor-wrapper {
+    padding:1.5% 8.5%;
+}
+ 
+div.toolbox {
+    width:100%;
+    background:linear-gradient(-90deg,#808080,silver,silver);
+    border-radius:5px;
+    height:40px;
+    border:ridge silver;
+}    
+
+.widgetbox-header {
+    font-family:Calibri;
+    box-shadow:0 0 1px black;
+    padding:10px 20px;
+    background:linear-gradient(0deg, #eeeeee, silver, #eeeeee);
+    margin-top:2px;
+    color:#2c2c2c;
+}
+
+.widgetbox-header.ui-state-active {
+    border-radius:5px 5px 0 0;
+}
+
+.widgetbox-header:not(.ui-state-active) {
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.widgetbox-header:hover:not(.ui-state-active) {
+    background:linear-gradient(0deg, #eeeeee, #dfdfdf, #eeeeee);
+}
+        
+.widgetbox-content {
+    margin-top:1px;
+    height:355px;
+    background:#dfdfdf;
+    overflow:auto;
+    border: solid 1px #808080;
+    border-top-style:none;
+    border-radius:0 0 5px 5px;
+}
+
+.widgetbox-wrapper {
+    height:100%;
+    border-radius:0 0 0 5px;
+    width:200px;
+}
+
+.widgetbox-table {
+    text-align:center;
+    width:100%;
+}
+
+.widgetbox-table td.hover:hover {
+    background:linear-gradient(to right,#dfdfdf,#efefef,#dfdfdf);
+}
+
+.button-pressed {
+    background:radial-gradient(ellipse at center,#efefef 0%,silver 75%);
+}
+
+.widgetbox-table td {
+    width:50%;
+    padding:10px 0;
+}
+
+.widgetbox-table img {
+    vertical-align:middle;
+}
+        
+.bpmneditor-logo {
+    font-family:'Comic Sans MS';
+    font-size:30px;
+    color:#808080;
+    text-shadow:0 0 3px;
+    margin-left:5px;
+}
+
+.toolbox-button {
+    float:right;
+    margin:7px 5px 0 0;
+    padding:3px;
+    border-radius:5px;
+    border:solid 1px silver;
+    background:#efefef;
+}
+.toolbox-button:hover {
+    background:#dfdfdf;
+}
+
+.xpdl-editor {
+    width:900px;
+    height:525px;
+    border:1px solid silver;
+    background:linear-gradient(0deg,silver,white 8%,#dfdfdf) ;
+}
+
+.xpdl-editor-header {
+    font-family:'Comic Sans MS';
+    text-align:center;
+    cursor:default;
+    color:silver;
+}
+
+.textarea-code-editor {
+    background:#f1eeee;
+    width:100%;
+    height:90%;
+    overflow:auto;
+}
+
+
+.dialog-screenmask {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+    background:#000000;
+}
+
+.dialog-header {
+    width:100%;
+    padding:5px;
+    background:linear-gradient(0deg, white, #dfdfdf, silver);
+}
+.poolselect-confirmation {
+    padding:0;
+    font-family:Calibri;
+    overflow:hidden;
+    border:ridge silver;
+}
+.dialog-text {
+    padding: 10px 5px;
+}
+
+.dialog-btn {
+    padding:2px 5px;
+    width:80px;
+    margin-right:3px;
+    border-radius:5px;
+    border:solid 1px silver;
+    background:#efefef;
+}
+
+.dialog-btn:hover {
+    background:#dfdfdf;   
+}
+
+.dialog-footer {
+    background:linear-gradient(0deg, silver, #dfdfdf, white);
+    text-align:right;
+    padding:5px;
+}
