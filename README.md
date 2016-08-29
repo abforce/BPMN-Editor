@@ -11,7 +11,7 @@ Tech stack:
  - [CodeMirror](https://codemirror.net/)
 
 #### Credits:
-   - Ali Reza Barkhordari
+   - Ali Reza Barkhordari (2012-2013)
    - Icons aren't mine! (I stole them from https://www.draw.io)
  
  
